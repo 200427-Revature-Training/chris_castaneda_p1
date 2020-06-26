@@ -6,8 +6,8 @@ import * as authenticateJWT from './authenticate-router'; //!NEW LOGIN CODE
 
 export const userRouter = express.Router();
 
-/**Read All Users */
-userRouter.get('',  authenticateJWT.authenticateJWT, async(request, response, next)=> { //!NEW LOGIN CODE
+/**Read All Users */  //authenticateJWT.authenticateJWT, async
+userRouter.get('',  authenticateJWT.authenticateJWT, async (request, response, next)=> { //!NEW LOGIN CODE
     let users: User[];
     
     try{
@@ -52,6 +52,7 @@ userRouter.get('/:id', async(request, response, next)=> {
         response.json(newUser);
     } catch (err) {
         response.sendStatus(500);
+        console.log(err);
         return;
     }
     next();
