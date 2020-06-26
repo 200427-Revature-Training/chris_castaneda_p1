@@ -29,7 +29,7 @@ function App() {
                 <LoginComponent />
               </Route>
               
-              <div> 
+              <div>  
               <NavbarComponent />
               
               <Route path="/employee">
